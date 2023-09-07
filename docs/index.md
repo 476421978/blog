@@ -4,7 +4,7 @@ class: home
 hero:
   # name: 全栈
   image:
-    src: ./public/logo.jpg
+    src: /logo.jpg
   text: web前端
   tagline: 包含HTML、CSS、JavaScript、Vue、React、TypeScript、Node.js、Egg、Myqsl...
   actions:
@@ -17,7 +17,7 @@ hero:
 features:
   - icon: ✨
     title: 随笔记录
-    details: 整理记录，方便大家
+    details: 记录工作生活
   - icon: ❤
     title: 循序渐进
     details: 纸上得来终觉浅，绝知此事要躬行。

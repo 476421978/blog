@@ -52,7 +52,7 @@ export default defineConfig({
       next: "下一篇",
     },
     footer: {
-      message: '© <a href="https://hlgshare.top">hlgshare.top</a> @2021-08-14',
+      message: '© <a href="https://hlgshare.top">hlgshare.top</a> @2023-2024',
       copyright: '<a href="https://beian.miit.gov.cn/#/Integrated/index">粤公网安备 44122502000031号</a>',
     },
     // theme-level options
