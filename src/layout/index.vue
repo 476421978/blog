@@ -1,8 +1,7 @@
 <!-- .vitepress/theme/Layout.vue -->
 <template>
-  <div>自定义布局</div>
   <defaultLayout>
-    <template #doc-footer-before> aside-outline-after </template>
+    <template #doc-footer-before> </template>
   </defaultLayout>
 </template>
 

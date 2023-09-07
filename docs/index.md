@@ -4,7 +4,7 @@ class: home
 hero:
   # name: 全栈
   image:
-    src: /public/logo.jpg
+    src: ./public/logo.jpg
   text: web前端
   tagline: 包含HTML、CSS、JavaScript、Vue、React、TypeScript、Node.js、Egg、Myqsl...
   actions:
