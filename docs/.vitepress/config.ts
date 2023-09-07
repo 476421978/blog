@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress"
-import { ES6 } from "./catalog"
+import { ES6, JavaScript} from "./catalog"
 
 export default defineConfig({
   // site-level options
@@ -12,9 +12,14 @@ export default defineConfig({
         text: "ES6",
         items: ES6,
       },
+      {
+        text: "JavaScript",
+        items: JavaScript,
+      },
     ],
     sidebar: {
       "/ES6/": ES6,
+      "/JavaScript/": JavaScript,
     },
     search: {
       provider: "local",
