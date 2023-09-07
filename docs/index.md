@@ -1,0 +1,45 @@
+---
+layout: home
+class: home
+hero:
+  # name: 全栈
+  image:
+    src: /public/logo.jpg
+  text: web前端
+  tagline: 包含HTML、CSS、JavaScript、Vue、React、TypeScript、Node.js、Egg、Myqsl...
+  actions:
+    - theme: brand
+      text: 首页
+      link: /pages/software
+    - theme: alt
+      text: 更新日志
+      link: /docs/关于/更新日志
+features:
+  - icon: ✨
+    title: 随笔记录
+    details: 整理记录，方便大家
+  - icon: ❤
+    title: 循序渐进
+    details: 纸上得来终觉浅，绝知此事要躬行。
+  - icon: 🚶‍♂️
+    title: 关于我
+    details: 是个路人。
+---
+
+<style>
+@media (min-width: 960px) {
+  .home .VPHero.has-image .main {
+    max-width: 640px;
+  }
+}
+
+.VPFeatures + .VPFeatures,
+.site_pv ~ .site_pv {
+  display: none;
+}
+
+.site_pv{
+  text-align: center;
+  padding: 2em;
+}
+</style>
