@@ -40,6 +40,6 @@ features:
 
 .site_pv{
   text-align: center;
-  padding: 2em;
+  padding-top: 5em;
 }
 </style>

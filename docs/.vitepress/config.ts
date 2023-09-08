@@ -28,6 +28,10 @@ export default defineConfig({
         s.parentNode.insertBefore(hm, s);
       })();`,
     ],
+    [
+      "script",
+      { async: '', src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' }
+    ]
   ],
   themeConfig: {
     nav: [

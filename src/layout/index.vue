@@ -12,49 +12,44 @@
       >
       </ins>
     </template> -->
-    <!-- <template #home-features-after>
-      <div
-        v-loading
-        class="site_pv"
-      >
+    <template #home-features-after>
+      <div class="site_pv">
         本站总访问量
-        <span id="busuanzi_value_site_pv">
-          <el-icon-loading class="loading-icon" />
-        </span>
+        <span id="busuanzi_value_site_pv"> </span>
         次，访客数
-        <span id="busuanzi_value_site_uv">
-          <el-icon-loading class="loading-icon" />
-        </span>
+        <span id="busuanzi_value_site_uv"> </span>
         人次
       </div>
     </template>
     <template #doc-before>
       <div class="page_pv">
         本文总阅读量
-        <span id="busuanzi_value_page_pv">
-          <el-icon-loading class="loading-icon" />
-        </span>
+        <span id="busuanzi_value_page_pv"> </span>
         次
       </div>
-    </template> -->
+    </template>
   </defaultLayout>
 </template>
 
 <script setup lang="ts">
-import { onMounted, computed } from "vue"
-import { useData } from "vitepress"
+import { onMounted, computed, watch } from "vue"
+import { useData, useRoute } from "vitepress"
 // @ts-ignore
 import defaultLayout from "vitepress/dist/client/theme-default/Layout.vue"
+
+const route = useRoute()
 
 const data = useData()
 
 const getCurClass = computed(() => {
   return data.frontmatter.value.class
 })
-
-onMounted(() => {
-  // console.log("data--->>>", data)
-})
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.loading-icon {
+  display: inline;
+  vertical-align: middle;
+  animation: loading-rotate 2s linear infinite;
+}
+</style>
