@@ -6,7 +6,7 @@ hero:
   image:
     src: /logo.jpg
   text: web前端
-  tagline: 包含HTML、CSS、JavaScript、Vue、React、TypeScript、Node.js、Egg、Myqsl...
+  tagline: 包含HTML、CSS、JavaScript、Vue、React、TypeScript...
   actions:
     - theme: brand
       text: 首页
