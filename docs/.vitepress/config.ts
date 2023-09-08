@@ -43,6 +43,12 @@ export default defineConfig({
         text: "JavaScript",
         items: JavaScript,
       },
+      {
+        text: "关于",
+        items: [
+          { text: "更新日志", link: "/关于/更新日志" },
+        ],
+      }
     ],
     sidebar: {
       "/ES6/": ES6,

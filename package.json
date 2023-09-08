@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:serve": "vitepress serve docs",
+    "log": "conventional-changelog -p angular -i ./docs/关于/更新日志.md -s -r 0"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/node": "^20.5.9",
     "@vitejs/plugin-vue": "^4.2.3",
+    "conventional-changelog-cli": "^4.0.0",
     "typescript": "^5.0.2",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.2",
