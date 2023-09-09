@@ -2,14 +2,13 @@ const flag = true
 const options = {
   writerOpts: {
     transform: (commit, context) => {
-      console.log('commit, context-----', commit, context);
-      // let discard = true
+      let discard = true
       const issues = []
 
-      // commit.notes.forEach(note => {
-      //   note.title = "重大变化"
-      //   discard = false
-      // })
+      commit.notes.forEach(note => {
+        note.title = "重大变化"
+        discard = false
+      })
 
       if (commit.type === "feat") {
         commit.type = "✨ 新功能"
@@ -33,7 +32,7 @@ const options = {
         commit.type = "👷 构建"
       } else if (commit.type === "ci") {
         commit.type = "🔧 配置"
-      }else {
+      } else {
         commit.type = "📝 普通日志"
       }
 
@@ -72,8 +71,6 @@ const options = {
         }
       }
 
-      commit.subject = `${commit.subject}<sub style="color: #333">${commit.committerDate}</sub>`
-
       // remove references that already appear in the subject
       commit.references = commit.references.filter(reference => {
         if (issues.indexOf(reference.issue) === -1) {
@@ -83,15 +80,16 @@ const options = {
         return false
       })
 
+      commit.subject = `${commit.header}<sub style="color: #333">${commit.committerDate}</sub>`
+
       // 提交时间
-      commit.sortTime = context.sortTime = 
+      commit.sortTime = context.sortTime =
         Date.now() - new Date(commit.committerDate)
 
       // 把版本设为 markdown 二级标题
       commit.gitTags && (commit.isPatch = true)
 
       context.version = "更新日志"
-      context.date = ""
 
       return commit
     },

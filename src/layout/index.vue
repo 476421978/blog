@@ -15,16 +15,22 @@
     <template #home-features-after>
       <div class="site_pv">
         本站总访问量
-        <span id="busuanzi_value_site_pv"> </span>
+        <span id="busuanzi_value_site_pv">
+          <Loading class="loading-icon"></Loading>
+        </span>
         次，访客数
-        <span id="busuanzi_value_site_uv"> </span>
+        <span id="busuanzi_value_site_uv">
+          <Loading class="loading-icon"></Loading>
+        </span>
         人次
       </div>
     </template>
     <template #doc-before>
       <div class="page_pv">
         本文总阅读量
-        <span id="busuanzi_value_page_pv"> </span>
+        <span id="busuanzi_value_page_pv">
+          <Loading class="loading-icon"></Loading>
+        </span>
         次
       </div>
     </template>
@@ -44,6 +50,22 @@ const data = useData()
 const getCurClass = computed(() => {
   return data.frontmatter.value.class
 })
+
+let script: any
+onMounted(async () => {
+  script = await import("busuanzi.pure.js")
+})
+
+watch(
+  () => route.path,
+  () => {
+    // 访问量统计
+    script?.fetch()
+  },
+  {
+    immediate: true,
+  }
+)
 </script>
 
 <style lang="scss">

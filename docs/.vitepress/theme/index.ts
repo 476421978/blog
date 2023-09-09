@@ -4,7 +4,8 @@ import DefaultTheme from "vitepress/theme"
 import Layout from '@/layout/index.vue'
 // element-plus
 import elementPlus from "element-plus"
-import useElIcon from "@element-plus/icons-vue/global"
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
 // 全局样式
 import "@/style/index.scss"
 
@@ -18,7 +19,9 @@ const theme: Theme = {
     // a `ref` of current site-level metadata.
 
     // 全局注册 Element-plus
-    useElIcon(app as any)
+    for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+      app.component(key, component)
+    }
     app.use(elementPlus)
   },
   setup() {

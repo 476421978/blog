@@ -13,7 +13,7 @@ hero:
       link: /pages/software
     - theme: alt
       text: 更新日志
-      link: /docs/关于/更新日志
+      link: /关于/更新日志
 features:
   - icon: ✨
     title: 随笔记录
