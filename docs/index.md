@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: 首页
-      link: /pages/software
+      link: /
     - theme: alt
       text: 更新日志
       link: /关于/更新日志

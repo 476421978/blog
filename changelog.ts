@@ -82,10 +82,6 @@ const options = {
 
       commit.subject = `${commit.header}<sub style="color: #333">${commit.committerDate}</sub>`
 
-      // 提交时间
-      commit.sortTime = context.sortTime =
-        Date.now() - new Date(commit.committerDate)
-
       // 把版本设为 markdown 二级标题
       commit.gitTags && (commit.isPatch = true)
 
@@ -94,9 +90,9 @@ const options = {
       return commit
     },
     groupBy: "type",
-    commitGroupsSort: "sortTime",
-    commitsSort: ["sortTime", "scope", "subject"],
-    noteGroupsSort: "sortTime",
+    commitGroupsSort: "committerDate",
+    commitsSort: ["committerDate"],
+    noteGroupsSort: "committerDate",
   },
 }
 
