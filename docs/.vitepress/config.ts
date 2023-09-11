@@ -1,10 +1,10 @@
 import { defineConfig } from "vitepress"
-import { ES6, JavaScript } from "./catalog"
+import { ES6, JavaScript, Back } from "./catalog"
 
 // element-plus
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from "unplugin-auto-import/vite"
+import Components from "unplugin-vue-components/vite"
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
 
 export default defineConfig({
   // site-level options
@@ -44,15 +44,18 @@ export default defineConfig({
         items: JavaScript,
       },
       {
+        text: "后端",
+        items: Back,
+      },
+      {
         text: "关于",
-        items: [
-          { text: "更新日志", link: "/关于/更新日志" },
-        ],
-      }
+        items: [{ text: "更新日志", link: "/关于/更新日志" }],
+      },
     ],
     sidebar: {
       "/ES6/": ES6,
       "/JavaScript/": JavaScript,
+      "/后端/": Back,
     },
     search: {
       provider: "local",
@@ -86,9 +89,9 @@ export default defineConfig({
     },
     footer: {
       message: '© <a href="https://hlgshare.top">hlgshare.top</a> @2023-2024',
-      copyright: '<a href="https://beian.miit.gov.cn/#/Integrated/index">粤公网安备 44122502000031号</a>',
+      copyright:
+        '<a href="https://beian.miit.gov.cn/#/Integrated/index">粤公网安备 44122502000031号</a>',
     },
-
     // theme-level options
   },
   // 插件

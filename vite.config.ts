@@ -11,6 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": _resolve("src"),
+      "@p": _resolve("docs/public")
     },
   },
 })

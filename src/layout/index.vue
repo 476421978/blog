@@ -40,7 +40,6 @@
 <script setup lang="ts">
 import { onMounted, computed, watch } from "vue"
 import { useData, useRoute } from "vitepress"
-// @ts-ignore
 import defaultLayout from "vitepress/dist/client/theme-default/Layout.vue"
 
 const route = useRoute()
