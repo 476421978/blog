@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress"
-import { ES6, JavaScript, Back } from "./catalog"
+import { ES6, JavaScript, Back, Front, Notes } from "./catalog"
 
 // element-plus
 import AutoImport from "unplugin-auto-import/vite"
@@ -36,12 +36,20 @@ export default defineConfig({
   themeConfig: {
     nav: [
       {
+        text: "前端",
+        items: Front,
+      },
+      {
         text: "ES6",
         items: ES6,
       },
       {
         text: "JavaScript",
         items: JavaScript,
+      },
+      {
+        text: "杂记",
+        items: Notes,
       },
       {
         text: "后端",
@@ -53,8 +61,10 @@ export default defineConfig({
       },
     ],
     sidebar: {
+      "/前端/": Front,
       "/ES6/": ES6,
       "/JavaScript/": JavaScript,
+      "/杂记/": Notes,
       "/后端/": Back,
     },
     search: {
