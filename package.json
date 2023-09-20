@@ -15,8 +15,12 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
+    "axios": "^1.5.0",
     "busuanzi.pure.js": "^1.0.3",
+    "dayjs": "^1.11.10",
     "element-plus": "^2.3.12",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.1.6",
     "sass": "^1.66.1",
     "vue": "^3.3.4",
     "vue-router": "4"

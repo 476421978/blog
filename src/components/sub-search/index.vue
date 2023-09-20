@@ -230,7 +230,6 @@ export default {
       // try {
       //   const res = await API.AgentSelect()
       //   if (!res) return
-
       //   const list = res.rows
       //   const agentList = list.map(item => {
       //     return {
@@ -238,9 +237,7 @@ export default {
       //       label: item.name,
       //     }
       //   })
-
       //   const i = this.searchData.findIndex(element => element.id == '2')
-
       //   if (i > -1) {
       //     this.searchData[i].options = agentList
       //     if (this.searchData[i].defaultOption) {
@@ -256,10 +253,8 @@ export default {
       // try {
       //   const res = await API.ProvinceCityDistrict()
       //   if (!res) return
-
       //   const list = res.rows
       //   const i = this.searchData.findIndex(element => element.id === '66')
-
       //   if (i > -1) {
       //     this.searchData[i].areaArr[0].valueArr = list || []
       //   }
