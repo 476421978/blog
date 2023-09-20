@@ -6,6 +6,8 @@ import AutoImport from "unplugin-auto-import/vite"
 import Components from "unplugin-vue-components/vite"
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
 
+import { demoblockPlugin, demoblockVitePlugin } from 'vitepress-theme-demoblock'
+
 export default defineConfig({
   // site-level options
   title: "HLG随笔",
@@ -116,6 +118,7 @@ export default defineConfig({
   ],
   // vite配置，不需要单独vite配置文件
   vite: {
+    plugins: [demoblockVitePlugin()],
     optimizeDeps: {
       // 此选项可强制预构建链接的包
       include: ["element-plus"],
@@ -132,4 +135,11 @@ export default defineConfig({
   //   ],
   // },
   // ...
+  markdown: {
+    config: (md) => {
+      md.use(demoblockPlugin, {
+        customClass: 'demoblock-custom'
+      })
+    }
+  }
 })

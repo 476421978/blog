@@ -20,11 +20,11 @@
     "noUnusedParameters": false, // 是否检查未使用的参数。
     "noFallthroughCasesInSwitch": true,
 
-    // "baseUrl": "./",
-    // "paths": {
-    //   "@/*": ["src/*"]
-    // },
-    // "types": ["element-plus/global", "vite/client"] // Volar 支持
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["element-plus/global", "vite/client"] // Volar 支持
   },
   "exclude": [
     // 排除掉哪些类库
