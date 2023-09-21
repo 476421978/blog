@@ -54,7 +54,6 @@ export default {
 <style lang="scss" scoped>
 .t-input-com {
   display: flex;
-  justify-align: center;
   align-items: center;
   .title {
     margin-right: 10px;

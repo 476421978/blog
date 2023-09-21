@@ -18,7 +18,7 @@
               :prop="item.fName"
               :rules="item.rules ? item.rules : []"
             >
-              <t-input
+              <!-- <t-input
                 v-if="item.comType === 'input'"
                 :id="item.id"
                 v-model="item.fValue"
@@ -30,15 +30,15 @@
                 :id="item.id"
                 v-model="item.fValue"
                 :options="item.options"
-              />
-              <t-cascader
+              /> -->
+              <!-- <t-cascader
                 v-if="item.comType === 'cascader'"
                 :id="item.id"
                 v-model="item.fValue"
                 :options="item.options"
-              />
+              /> -->
 
-              <t-date-picker
+              <!-- <t-date-picker
                 v-if="item.comType === 'datePicker'"
                 v-bind="{
                   dateType: item.type,
@@ -48,7 +48,7 @@
                   pickerOptions: item.pickerOptions ? (item.type === 'date' ? pickerOptions : pickerOptionsTwo) : limitDay,
                 }"
                 v-model="item.fValue"
-              />
+              /> -->
               <TAarea
                 v-if="item.comType === 'area'"
                 :areaArr="item.areaArr"
@@ -80,13 +80,14 @@
 </template>
 
 <script>
+import API from '@/api'
 import TInput from './com/TInput/index.vue'
 import TSelect from './com/TSelect/index.vue'
 import TCascader from './com/TCascader/index.vue'
 import TDatePicker from './com/TDatePicker/index.vue'
 import TAarea from './com/TArea/index.vue'
 export default {
-  name: 'TSSearch',
+  name: 'TSearch',
   components: {
     TInput,
     TSelect,
@@ -194,8 +195,8 @@ export default {
     },
   },
   mounted() {
-    // this.getAgentList()
-    // this.getCascade()
+    this.getAgentList()
+    this.getCascade()
   },
   methods: {
     // 验证
@@ -213,7 +214,7 @@ export default {
     // 重置
     onReset() {
       this.searchData = JSON.parse(JSON.stringify(this.mockData))
-      // this.getAgentList()
+      this.getAgentList()
       // 查询省市区
       this.params = {
         province: '',
@@ -227,41 +228,46 @@ export default {
     },
     //获取代理商
     async getAgentList() {
-      // try {
-      //   const res = await API.AgentSelect()
-      //   if (!res) return
-      //   const list = res.rows
-      //   const agentList = list.map(item => {
-      //     return {
-      //       value: item.id,
-      //       label: item.name,
-      //     }
-      //   })
-      //   const i = this.searchData.findIndex(element => element.id == '2')
-      //   if (i > -1) {
-      //     this.searchData[i].options = agentList
-      //     if (this.searchData[i].defaultOption) {
-      //       this.searchData[i].fValue = agentList[0].value //  默认选一个
-      //     }
-      //   }
-      // } catch (error) {
-      //   console.log('getAgentList--->>>', error)
-      // }
+      try {
+        const res = await API.AgentSelect()
+        if (!res) return
+
+        const list = res.rows
+        const agentList = list.map(item => {
+          return {
+            value: item.id,
+            label: item.name,
+          }
+        })
+
+        const i = this.searchData.findIndex(element => element.id == '2')
+
+        if (i > -1) {
+          this.searchData[i].options = agentList
+          if (this.searchData[i].defaultOption) {
+            this.searchData[i].fValue = agentList[0].value //  默认选一个
+          }
+        }
+      } catch (error) {
+        console.log('getAgentList--->>>', error)
+      }
     },
     // 获取省市区数据
     async getCascade(item = this.params) {
-      // try {
-      //   const res = await API.ProvinceCityDistrict()
-      //   if (!res) return
-      //   const list = res.rows
-      //   const i = this.searchData.findIndex(element => element.id === '66')
-      //   if (i > -1) {
-      //     this.searchData[i].areaArr[0].valueArr = list || []
-      //   }
-      //   this.searchData[i].fValue = item
-      // } catch (error) {
-      //   console.log('getCascade--->>>', error)
-      // }
+      try {
+        const res = await API.ProvinceCityDistrict()
+        if (!res) return
+
+        const list = res.rows
+        const i = this.searchData.findIndex(element => element.id === '66')
+
+        if (i > -1) {
+          this.searchData[i].areaArr[0].valueArr = list || []
+        }
+        this.searchData[i].fValue = item
+      } catch (error) {
+        console.log('getCascade--->>>', error)
+      }
     },
     // 获取 form 对象
     getForm(dataArr = []) {
