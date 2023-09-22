@@ -49,13 +49,13 @@
                 }"
                 v-model="item.fValue"
               /> -->
-              <TAarea
+              <!-- <TAarea
                 v-if="item.comType === 'area'"
                 :areaArr="item.areaArr"
                 :fValue="item.fValue"
                 @get-cascade="getCascade"
               />
-            </el-form-item>
+            </el-form-item> -->
           </el-col>
         </template>
 
