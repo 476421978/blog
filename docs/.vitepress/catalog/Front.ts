@@ -4,8 +4,13 @@ export const Front = [
     collapsed: true,
     items: [
       { text: '双向绑定', link: '/前端/vue2/双向绑定' },
-      { text: '二次封装', link: '/前端/vue2/二次封装' },
-    ]
+      // { text: '二次封装', link: '/前端/vue2/二次封装' },
+    ],
+  },
+  {
+    text: 'Vue3',
+    collapsed: true,
+    items: [{ text: 'element二次封装', link: '/前端/vue3/element二次封装' }],
   },
   {
     text: '工具函数',

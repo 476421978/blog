@@ -1,58 +1,52 @@
 <template>
   <div class="t-cascader-com">
-    <span
-      v-if="title"
-      class="title"
-      >{{ title }}</span
-    >
     <el-cascader
       class="cascader"
       v-model="currentVal"
       :options="options"
       :props="{ expandTrigger: 'hover' }"
-      v-bind="attrs"
-      v-on="$listeners"
+      v-bind="getAttrs"
+      v-on="slots"
     />
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    id: {
-      type: String,
-    },
-    title: {
-      type: String,
-    },
-    value: {
-      type: Array,
-      default: () => [],
-    },
-    options: {
-      type: Array,
-      default: () => [],
-    },
-  },
-  data() {
-    return {
-      currentVal: this.value,
-    }
-  },
-  computed: {
-    attrs() {
-      return {
-        clearable: true,
-        ...this.$attrs,
-      }
-    },
-  },
-  methods: {
-    // handleChange(value) {
-    //   this.$emit('cascaderChange', value, this.id)
-    // }
-  },
+<script setup lang="ts">
+import { computed, useAttrs, useSlots } from 'vue'
+
+interface Props {
+  id?: string
+  value?: Array<any>
+  options?: Array<any>
 }
+
+const props = withDefaults(defineProps<Props>(), {
+  id: '',
+  value: () => [],
+  options: () => [],
+})
+
+// $slots 和 $attrs
+const slots = useSlots()
+const attrs = useAttrs()
+
+const getAttrs = computed(() => {
+  return {
+    placeholder: '请选择',
+    ...attrs,
+  }
+})
+
+interface Emits {
+  (event: 'update:value', val: Array<any>): void
+}
+const emit = defineEmits<Emits>()
+const currentVal = computed({
+  get: () => props.value,
+  set: val => {
+    emit('update:value', val)
+  },
+})
 </script>
 
 <style lang="scss" scoped>

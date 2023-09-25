@@ -1,3 +1,8 @@
+事事顺心
+
+
+:::demo
+```vue
 <template>
   <div>
     <sub-search
@@ -51,3 +56,6 @@ const onSubmitSuccess = function (val: any) {
 </script>
 
 <style lang="scss" scoped></style>
+
+```
+:::

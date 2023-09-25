@@ -1,26 +1,32 @@
-import { defineConfig } from "vitepress"
-import { ES6, JavaScript, Back, Front, Notes } from "./catalog"
+import { defineConfig } from 'vitepress'
+import { ES6, JavaScript, Back, Front, Notes } from './catalog'
 
 // element-plus
-import AutoImport from "unplugin-auto-import/vite"
-import Components from "unplugin-vue-components/vite"
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 import { demoblockPlugin, demoblockVitePlugin } from 'vitepress-theme-demoblock'
 
+import path from 'path'
+
+function _resolve(dir) {
+  return path.resolve(__dirname, dir)
+}
+
 export default defineConfig({
   // site-level options
-  title: "HLG随笔",
-  lang: "zh-CN",
-  description: "包含HTML、CSS、JavaScript、Vue、React、TypeScript、Node.js...",
-  outDir: "../dist",
+  title: 'HLG随笔',
+  lang: 'zh-CN',
+  description: '包含HTML、CSS、JavaScript、Vue、React、TypeScript、Node.js...',
+  outDir: '../dist',
   head: [
     // 在 Chrome 85 版本中，为了保护用户的隐私，默认的 Referrer Policy 则变成了 strict-origin-when-cross-origin
     // 所以必须加入此部分代码，否则文章统计访问量的数据则不正确
-    ["meta", { name: "referrer", content: "no-referrer-when-downgrade" }],
+    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
     // 添加百度统计
     [
-      "script",
+      'script',
       {},
       `var _hmt = _hmt || [];
       (function() {
@@ -38,39 +44,39 @@ export default defineConfig({
   themeConfig: {
     nav: [
       {
-        text: "前端",
+        text: '前端',
         items: Front,
       },
       {
-        text: "ES6",
+        text: 'ES6',
         items: ES6,
       },
       {
-        text: "JavaScript",
+        text: 'JavaScript',
         items: JavaScript,
       },
       {
-        text: "杂记",
+        text: '杂记',
         items: Notes,
       },
       {
-        text: "后端",
+        text: '后端',
         items: Back,
       },
       {
-        text: "关于",
-        items: [{ text: "更新日志", link: "/关于/更新日志" }],
+        text: '关于',
+        items: [{ text: '更新日志', link: '/关于/更新日志' }],
       },
     ],
     sidebar: {
-      "/前端/": Front,
-      "/ES6/": ES6,
-      "/JavaScript/": JavaScript,
-      "/杂记/": Notes,
-      "/后端/": Back,
+      '/前端/': Front,
+      '/ES6/': ES6,
+      '/JavaScript/': JavaScript,
+      '/杂记/': Notes,
+      '/后端/': Back,
     },
     search: {
-      provider: "local",
+      provider: 'local',
       // options: {
       //   locales: {
       //     zh: {
@@ -92,17 +98,16 @@ export default defineConfig({
       //   }
       // }
     },
-    outlineTitle: "此页目录", // 大纲中显示的标题级别
+    outlineTitle: '此页目录', // 大纲中显示的标题级别
     // lastUpdatedText: "最后更新时间",
     outline: [2, 6],
     docFooter: {
-      prev: "上一篇",
-      next: "下一篇",
+      prev: '上一篇',
+      next: '下一篇',
     },
     footer: {
       message: '© <a href="https://hlgshare.top">hlgshare.top</a> @2023-2024',
-      copyright:
-        '<a href="https://beian.miit.gov.cn/#/Integrated/index">粤公网安备 44122502000031号</a>',
+      copyright: '<a href="https://beian.miit.gov.cn/#/Integrated/index">粤公网安备 44122502000031号</a>',
     },
     // theme-level options
   },
@@ -121,11 +126,12 @@ export default defineConfig({
     plugins: [demoblockVitePlugin()],
     optimizeDeps: {
       // 此选项可强制预构建链接的包
-      include: ["element-plus"],
+      include: ['element-plus'],
     },
     resolve: {
       alias: {
-        "@": "src",
+        '@': _resolve('../../src'),
+        '@p': _resolve('../public'),
       },
     },
   },
@@ -136,10 +142,10 @@ export default defineConfig({
   // },
   // ...
   markdown: {
-    config: (md) => {
+    config: md => {
       md.use(demoblockPlugin, {
-        customClass: 'demoblock-custom'
+        customClass: 'demoblock-custom',
       })
-    }
-  }
+    },
+  },
 })
