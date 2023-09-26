@@ -1,3 +1,7 @@
+
+
+## TInput组件
+```vue
 <template>
   <div>
     <el-input
@@ -63,3 +67,4 @@ const props = withDefaults(defineProps<Props>(), {
   }
 }
 </style>
+```

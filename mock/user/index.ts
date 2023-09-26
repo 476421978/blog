@@ -1,5 +1,4 @@
 import Mock from 'mockjs' // 模拟数据
-// import { baseData } from '../base.js'
 
 // 获取下拉框列表
 Mock.mock(RegExp('/agent_select'), function (options) {

@@ -2,15 +2,20 @@ export const Front = [
   {
     text: 'Vue2',
     collapsed: true,
-    items: [
-      { text: '双向绑定', link: '/前端/vue2/双向绑定' },
-      // { text: '二次封装', link: '/前端/vue2/二次封装' },
-    ],
+    items: [{ text: '双向绑定', link: '/前端/vue2/双向绑定' }],
   },
   {
     text: 'Vue3',
     collapsed: true,
-    items: [{ text: 'element二次封装', link: '/前端/vue3/element二次封装' }],
+    items: [
+      { text: '二次封装', link: '/前端/vue3/二次封装' },
+      { text: 'SearchForm', link: '/前端/vue3/SearchForm' },
+      { text: 'TInput', link: '/前端/vue3/TInput' },
+      { text: 'TArea', link: '/前端/vue3/TArea' },
+      { text: 'TCascader', link: '/前端/vue3/TCascader' },
+      { text: 'TSelect', link: '/前端/vue3/TSelect' },
+      { text: 'TDatePicker', link: '/前端/vue3/TDatePicker' },
+    ],
   },
   {
     text: '工具函数',

@@ -10,7 +10,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import '@/style/index.scss'
 
 // 模拟数据mock 会拦截请求
-import '../../../mock/index.js'
+import '@/../mock/index'
 
 // import elementAgain from '@/views/again/element-again/index'
 // import HelloWorld from '@/components/HelloWorld.vue'

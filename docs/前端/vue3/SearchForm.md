@@ -1,3 +1,5 @@
+## 组合搜索表单
+```vue
 <template>
   <div>
     <div class="sub-search-com">
@@ -273,3 +275,5 @@ defineExpose({
   }
 }
 </style>
+
+```
