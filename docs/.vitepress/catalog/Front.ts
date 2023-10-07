@@ -31,6 +31,7 @@ export const Front = [
       { text: '全屏', link: '/前端/工具函数/全屏' },
       { text: '数组、对象', link: '/前端/工具函数/数组、对象' },
       { text: '搜索高亮', link: '/前端/工具函数/搜索高亮' },
+      { text: 'H5与app交互', link: '/前端/工具函数/H5与app交互' },
     ],
   },
 ]
